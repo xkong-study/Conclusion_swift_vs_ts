@@ -1,0 +1,137 @@
+# Swift vs TypeScript Examples
+
+This document provides examples comparing the syntax and coding style of Swift and TypeScript.
+
+1. Handling Strings
+
+- Swift:
+var str = "Hello, "
+str += "World!"
+- TypeScript:
+let str = "Hello, " + "World!";
+
+2. Conditional Statements
+- Swift:
+let number = 10
+if number > 5 {
+    print("Number is greater than 5")
+} else {
+    print("Number is not greater than 5")
+}
+
+- TypeScript:
+let number = 10;
+if (number > 5) {
+    console.log("Number is greater than 5");
+} else {
+    console.log("Number is not greater than 5");
+}
+
+3. Loops
+- Swift:
+for i in 1...5 {
+    print(i)
+}
+
+- TypeScript:
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+4. Error Handling
+- Swift：
+enum PossibleError: Error {
+    case anError
+}
+do {
+    throw PossibleError.anError
+} catch {
+    print("Caught an error")
+}
+
+- TypeScript:
+try {
+    throw new Error("An error");
+} catch (error) {
+    console.log("Caught an error");
+}
+
+5.Defining and Calling Functions
+- Swift：
+func greet(name: String) {
+    print("Hello, \(name)!")
+}
+greet(name: "John")
+
+- TypeScript:
+function greet(name: string) {
+    console.log(`Hello, ${name}!`);
+}
+greet("John");
+
+6.Handling Arrays with map method
+- Swift：
+let numbers = [1, 2, 3, 4, 5]
+let squaredNumbers = numbers.map { $0 * $0 }
+
+- TypeScript:
+let numbers = [1, 2, 3, 4, 5];
+let squaredNumbers = numbers.map(num => num * num);
+
+7.Promise and async/await
+- Swift：
+// In Swift 5.5 and later
+func fetchData() async throws -> Data {
+    // ...
+}
+
+async {
+    do {
+        let data = try await fetchData()
+        // process data
+    } catch {
+        // handle error
+    }
+}
+
+
+- TypeScript:
+function fetchData(): Promise<Data> {
+    // ...
+}
+
+async function process() {
+    try {
+        let data = await fetchData();
+        // process data
+    } catch (error) {
+        // handle error
+    }
+}
+process();
+
+8.Generics
+- Swift：
+func swapTwoValues<T>(a: inout T, b: inout T) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+
+- TypeScript:
+function swapTwoValues<T>(a: T, b: T): [T, T] {
+    return [b, a];
+}
+
+9.Closures and Arrow Functions
+- Swift：
+let greet = { (name: String) in
+    return "Hello, \(name)!"
+}
+print(greet("Swift"))
+
+
+- TypeScript:
+let greet = (name: string) => {
+    return `Hello, ${name}`
+}
